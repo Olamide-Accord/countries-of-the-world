@@ -1,0 +1,36 @@
+.countries {
+  z-index: 1;
+  margin-top: 2%;
+}
+.countries .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding: 3% 0;
+}
+.countries .box-container .box{
+  flex: 1 1 25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.2rem 2rem rgba(0,0,0,0.3);
+}
+.countries .box-container .box img{
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+.countries .box-container .box-text{
+  padding: 1.5rem 3rem 2.5rem;
+}
+.box-text h4{
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.box-text p{
+  font-size: 1.3rem;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.1rem;
+}
+.box-text .box p b{
+  font-weight: 400;
+}

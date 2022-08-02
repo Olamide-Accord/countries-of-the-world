@@ -1,0 +1,84 @@
+.search-form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-form .inputDiv{
+  width: 30rem;
+  padding: 1.3rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+.search-form .inputDiv#dropdown-container{
+  width: 20rem;
+}
+#light .inputDiv{
+  background: var(--white);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+#dark .inputDiv{
+  background: var(--darkModeElement);
+}
+.search-form .inputDiv input{
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.flex-input{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.flex-input .icon{
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.flex-dropdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-dropdown .icon{
+  cursor: pointer;
+}
+.dropdown{
+  width: 100%;
+  margin-top: 1.5rem;
+  z-index: 1000;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+}
+.dropdown li{
+  margin: 0.5rem 0;
+  cursor: pointer;
+  padding: 0.65rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 0.35rem;
+}
+
+#light .dropdown {
+  background: var(--white);
+}
+#dark .dropdown{
+  background: var(--darkModeElement);
+}
+#light .dropdown li{
+  border-bottom: 1px solid var(--darkModeElement);
+}
+#dark .dropdown li {
+  border-bottom: 1px solid var(--white);
+}
+.dropdown li:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+.d-block{
+  display: block;
+}
+.d-none{
+  display: none;
+}

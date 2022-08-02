@@ -1,0 +1,31 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 6%;
+  box-shadow: 0 0 1.5rem rgba(0,0,0,0.3);
+}
+#light .navbar{
+  background-color: var(--white);
+}
+#dark .navbar{
+  background-color: var(--darkModeElement);
+}
+.navbar a{
+  font-size: 2.5rem;
+}
+.nav-div{
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-div .icon{
+  cursor: pointer;
+}
+#light .navbar a, #light .nav-div {
+  color: var(--lightModeText);
+}
+#dark .navbar a, #dark .nav-div {
+  color: var(--white);
+}
