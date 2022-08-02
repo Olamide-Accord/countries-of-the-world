@@ -8,7 +8,7 @@ const SearchForm = () => {
   return (
     <div className="search-form">
       <form onSubmit={handleSubmit}>
-        <div className="inputDiv">
+        <div className="inputDiv" id='searchInput'>
           <div className="flex-input">
             <IoIosSearch className="icon" />
             <input

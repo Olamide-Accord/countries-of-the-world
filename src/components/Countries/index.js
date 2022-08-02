@@ -4,7 +4,7 @@ import { useGlobalContext } from '../../context';
 import "./countries.css"
 
 const Countries = () => {
-  const {country} = useGlobalContext();
+  const {country, detailSubmit} = useGlobalContext();
   return (
     <div className="countries">
       <div className="box-container">
@@ -27,7 +27,7 @@ const Countries = () => {
                   <b>Capital: </b>
                   {capital}
                 </p>
-                <Link to={`/country/${id}`} className="btn">details</Link>
+                <Link to={`/country/${id}`} className="btn" onClick={detailSubmit}>details</Link>
               </div>
             </div>
           );

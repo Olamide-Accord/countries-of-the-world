@@ -20,6 +20,9 @@
 #dark .inputDiv{
   background: var(--darkModeElement);
 }
+#dark .inputDiv input::placeholder {
+  color: var(--white);
+}
 .search-form .inputDiv input{
   width: 100%;
   font-size: 1.5rem;
@@ -44,6 +47,10 @@
 .flex-dropdown .icon{
   cursor: pointer;
 }
+
+#dropdown-container, #searchInput{
+  box-shadow:  rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 .dropdown{
   width: 100%;
   margin-top: 1.5rem;
@@ -52,6 +59,7 @@
   top: 4rem;
   left: 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0.5rem;
 }
 .dropdown li{
   margin: 0.5rem 0;
