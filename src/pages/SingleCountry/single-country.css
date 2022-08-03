@@ -1,0 +1,53 @@
+.single-country .row{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.single-country .row .image{
+  flex: 1 1 25rem;
+}
+.single-country .row .image img{
+  height: 25rem;
+  width: 100%;
+  object-fit: cover;
+}
+.single-country .row .country-text{
+  flex: 1 1 40rem;
+}
+
+.single-country .row .country-text h3{
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.single-country .row .country-text h4{
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.single-country .row .country-text h5{
+  font-size: 2rem;
+  font-weight: 400;
+}
+span.bold{
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 2.6rem;
+  letter-spacing: 0.1rem;
+}
+.back-btn{
+  padding: 1rem 1.7rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+#light .back-btn{
+  background-color: var(--lightModeInput);
+  color: var(--lightModeText);
+}
+#dark .back-btn{
+  background-color: var(--darkModeElement);
+  color: var(--white);
+}

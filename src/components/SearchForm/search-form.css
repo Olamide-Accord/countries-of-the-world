@@ -77,12 +77,14 @@
 }
 #dark .dropdown{
   background: var(--darkModeElement);
+  
 }
 #light .dropdown button{
   border-bottom: 1px solid var(--darkModeElement);
 }
 #dark .dropdown button {
   border-bottom: 1px solid var(--white);
+  color: var(--white);
 }
 .dropdown button:last-child {
   margin-bottom: 0;

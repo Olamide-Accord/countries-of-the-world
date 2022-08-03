@@ -1,10 +1,13 @@
 import React from 'react';
 import { IoIosSearch, IoIosArrowDown } from "react-icons/io/index";
+
 import { useGlobalContext } from '../../context';
 import "./search-form.css"
 
 const SearchForm = () => {
-  const {handleSubmit, searchTerm, setSearchTerm, dropdown, toggleDropdown, filterRegion, country} = useGlobalContext()
+  const {handleSubmit, searchTerm, setSearchTerm, dropdown, toggleDropdown, filterRegion, country} = useGlobalContext();
+
+
   return (
     <div className="search-form">
       <form onSubmit={handleSubmit}>
