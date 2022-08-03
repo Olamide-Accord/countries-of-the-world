@@ -61,12 +61,15 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 0.5rem;
 }
-.dropdown li{
+.dropdown button{
   margin: 0.5rem 0;
   cursor: pointer;
   padding: 0.65rem 2rem;
   font-size: 1.5rem;
   border-radius: 0.35rem;
+  display: block;
+  background: transparent;
+  width: 100%;
 }
 
 #light .dropdown {
@@ -75,13 +78,13 @@
 #dark .dropdown{
   background: var(--darkModeElement);
 }
-#light .dropdown li{
+#light .dropdown button{
   border-bottom: 1px solid var(--darkModeElement);
 }
-#dark .dropdown li {
+#dark .dropdown button {
   border-bottom: 1px solid var(--white);
 }
-.dropdown li:last-child {
+.dropdown button:last-child {
   margin-bottom: 0;
   border-bottom: 0;
 }

@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const AppContext = createContext();
 const url = "https://restcountries.com/v2/all";
 const url2 = "https://restcountries.com/v2/name/";
-const url3 = "https://restcountries.com/v2/alpha/";
+const url3 = "https://restcountries.com/v2/alpha/bel";
 
 
 const AppProvider = ({children}) => {
@@ -56,9 +56,15 @@ const AppProvider = ({children}) => {
   }
 
   const detailCountry = async () => {
-    const response = await fetch(`${url3}${code}`);
+    const response = await fetch(`${url3}`);
     const data = await response.json();
     const {nativeName, population, region, subregion, capital, currencies, borders, languages, topLevelDomain} = data;
+    console.log(nativeName, capital, currencies);
+  }
+
+  const filterRegion = (region) => {
+    const newRegion = country.filter((item) => item.region === region);
+    setCountry(newRegion);
   }
 
   const handleSubmit = (e) => {
@@ -86,7 +92,8 @@ const AppProvider = ({children}) => {
       handleSubmit,
       dropdown,
       toggleDropdown,
-      detailSubmit
+      detailSubmit,
+      filterRegion
     }}>
       {children}
     </AppContext.Provider>

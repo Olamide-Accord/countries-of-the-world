@@ -4,7 +4,7 @@ import { useGlobalContext } from '../../context';
 import "./search-form.css"
 
 const SearchForm = () => {
-  const {handleSubmit, searchTerm, setSearchTerm, dropdown, toggleDropdown} = useGlobalContext()
+  const {handleSubmit, searchTerm, setSearchTerm, dropdown, toggleDropdown, filterRegion, country} = useGlobalContext()
   return (
     <div className="search-form">
       <form onSubmit={handleSubmit}>
@@ -24,18 +24,16 @@ const SearchForm = () => {
         <div className="inputDiv" id='dropdown-container'>
           <div className="dropdown-div">
             <div className="flex-dropdown">
-              Filter by Region
-              <IoIosArrowDown className="icon" onClick={toggleDropdown} />
+              <div>Filter by Region</div>
+              <IoIosArrowDown className="icon" onMouseDown={toggleDropdown} />
             </div>
           </div>
           <div className={dropdown ? "dropdown d-block" : "dropdown d-none"}>
-            <ul>
-              <li>Africa</li>
-              <li>Americas</li>
-              <li>Asia</li>
-              <li>Europe</li>
-              <li>Oceania</li>
-            </ul>
+            <button onClick={() => filterRegion("Africa")}>Africa</button>
+            <button onClick={() => filterRegion("Americas")}>Americas</button>
+            <button onClick={() => filterRegion("Asia")}>Asia</button>
+            <button onClick={() => filterRegion("Europe")}>Europe</button>
+            <button onClick={() => filterRegion("Oceania")}>Oceania</button>
           </div>
         </div>
       </div>
