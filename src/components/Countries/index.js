@@ -10,7 +10,7 @@ const Countries = () => {
     <div className="countries">
       <div className="box-container">
         {country.map((item, index) => {
-          const {id, name, population, capital, flags} = item;
+          const {id, name, region, capital, flags} = item;
           return (
             <div key={index} className="box">
               <img src={flags.png} alt={name} />
@@ -19,6 +19,10 @@ const Countries = () => {
                 <h5>
                   <b>Capital: </b>
                   {capital}
+                </h5>
+                <h5>
+                  <b>Region: </b>
+                  {region}
                 </h5>
                 <Link to={`/country/${id}`} className="btn">details</Link>
               </div>

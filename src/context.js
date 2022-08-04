@@ -11,7 +11,6 @@ const AppProvider = ({children}) => {
   const [theme, setTheme] = useState("light");
   const [dropdown, setDropdown] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [code, setCode] = useState("")
 
   const toggleTheme = () => {
     setTheme((curr) => curr === "light" ? "dark"  : "light")
