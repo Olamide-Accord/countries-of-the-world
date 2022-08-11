@@ -27,44 +27,37 @@ html{
 section {
   padding: 3.5rem 7%;
 }
-input{
-  background: transparent;
-}
-.btn{
-  padding: 0.65rem 2.5rem;
-  letter-spacing: 0.5rem;
-  cursor: pointer;
-  font-size: 1.7rem;
-  margin: 1rem 0;
-  display: inline-block;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
 .App{
   min-height: 100vh;
 }
 #light.App{
-  background: var(--lightModeBg);
+  background: var(--lightModeInput);
   color: var(--lightModeText);
 }
 #dark.App{
   background-color: var(--darkModeBg);
   color: var(--white);
 }
-#light .box {
-  background-color: var(--white);
+#light .icon{
   color: var(--lightModeText);
 }
-#dark .box {
-  background-color: var(--darkModeElement);
+#dark .icon{
   color: var(--white);
 }
+.btn{
+  font-size: 1.6rem;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  letter-spacing: 0.25rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.2rem 0 0 rgba(0,0,0,0.2);
+}
 #light .btn{
-  background-color: var(--lightModeInput);
+  background: var(--lightModeInput);
   color: var(--lightModeText);
 }
 #dark .btn{
-  background-color: var(--darkModeBg);
+  background: var(--darkModeBg);
   color: var(--white);
 }
 @media (max-width: 500px) {

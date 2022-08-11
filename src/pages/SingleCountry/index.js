@@ -1,34 +1,81 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
-import "./single-country.css"
+import { useParams } from 'react-router-dom';
+import "./single-country.css";
 
 const SingleCountry = () => {
+  const {countries} = useGlobalContext()
   const {id} = useParams();
-  const {country} = useGlobalContext();
-
-  const singleCountry = country.find((item) => {
-    const newId = parseFloat(id);
-    return item.id === newId
+  const country = countries.filter((item) => {
+    return item.id === parseInt(id);
   });
-  console.log(singleCountry);
-  const {flags, name, population, region, capital} = singleCountry;
+  console.log(country);
+  
   return (
     <section className="single-country">
-      <Link to="/" className="back-btn">back home</Link>
-      <div className="row">
-        <div className="image">
-          <img src={flags.png} alt={name} />
-        </div>
-        <div className="country-text">
-          <h3><span className="bold">name: </span>{name}</h3>
-          <h4><span className="bold">capital: </span>{capital}</h4>
-          <h5><span className="bold">population: </span>{population}</h5>
-          <h5><span className="bold">region: </span>{region}</h5>
-        </div>
-      </div>
-    </section>        
+      {
+        country.map((item, index) => {
+          const {name, region, population, capital,   img, subregion, borders, languages,  topLevelDomain, currencies, nativeName} = item;
+          
+          return <div className="countries" key={index}>
+            <div className="image">
+              <img src={img.png} alt={name} />
+            </div>
+            <div className="country-text">
+              <h4>{name}</h4>
+              <div className="flex-text">
+                <div className="section-1">
+                <h5> 
+                  <span>Native Name: </span>
+                  {nativeName}
+                </h5>
+                <h5>
+                  <span>Population: </span>
+                  {population}
+                </h5>
+                <h5>
+                  <span>Region: </span>
+                  {region}
+                </h5>
+                <h5>
+                  <span>Subregion: </span>
+                  {subregion}
+                </h5>
+                <h5>
+                  <span>Capital: </span>
+                  {capital}
+                </h5>
+                </div>
+                <div className="section-2">
+                  <h5>
+                    <span>Top Level Domain: </span>
+                    {topLevelDomain}
+                  </h5>
+                  <h5>
+                    <span>Currencies: </span>
+                    {
+                    currencies.map((item) => item.name)}
+                  </h5>
+                  <h5>
+                    <span>Languages: </span>
+                    {languages.map(item => item.name)}
+                  </h5>
+                </div>
+              </div>
+              {/* <div className="borders">
+              <h6>Border Countries: </h6>
+              {
+                borders.map((item, index) => <button className="btn">{item[index]}</button>
+                )
+              }
+            </div> */}
+            </div>
+            
+          </div>
+        })
+      }
+    </section>
   )
 }
 
-export default SingleCountry
+export default SingleCountry;

@@ -1,35 +1,37 @@
 import React from 'react';
-import {Link, } from"react-router-dom";
+import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context';
 import "./countries.css"
 
 const Countries = () => {
-  const {country} = useGlobalContext();
-  
+  const {countries} = useGlobalContext()
   return (
     <div className="countries">
-      <div className="box-container">
-        {country.map((item, index) => {
-          const {id, name, region, capital, flags} = item;
-          return (
-            <div key={index} className="box">
-              <img src={flags.png} alt={name} />
-              <div className="box-text">
-                <h4><b>Country: </b>{name}</h4>
-                <h5>
-                  <b>Capital: </b>
-                  {capital}
-                </h5>
-                <h5>
-                  <b>Region: </b>
-                  {region}
-                </h5>
-                <Link to={`/country/${id}`} className="btn">details</Link>
+      {
+        countries.map((country, index) => {
+          const {id, name, img, population, capital, region} = country;
+          return <div className="country" key={index}>
+            <div className="image">
+              <img src={img.png} alt={name} />
+            </div>
+            <div className="country-text">
+              <h4>{name}</h4>
+              <h5>
+                <span>Population:</span> {population}
+              </h5>
+              <h5> 
+                <span>Region: </span>
+                {region}</h5>
+              <h5>
+                <span>Capital: </span>
+                {capital}</h5>
+              <div className='button'>
+              <Link to={`/country/${id}`} className="btn">details</Link>
               </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        })
+      }
     </div>
   )
 }

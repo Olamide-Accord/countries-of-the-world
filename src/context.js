@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { useContext, createContext, useEffect, useState } from 'react';
 
 
 const AppContext = createContext();
@@ -7,80 +7,96 @@ const url = "https://restcountries.com/v2/all";
 const url2 = "https://restcountries.com/v2/name/";
 
 const AppProvider = ({children}) => {
-  const [country, setCountry] = useState([]);
   const [theme, setTheme] = useState("light");
-  const [dropdown, setDropdown] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const toggleTheme = () => {
-    setTheme((curr) => curr === "light" ? "dark"  : "light")
-  };
+  const [countries, setCountries] = useState([]);
+  const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdown = () => {
     setDropdown(!dropdown)
   }
 
-  const fetchAll =  async() => {
+  const toggleTheme = () => {
+    setTheme((curr) => curr === "light" ? "dark" : "light")
+  }
+
+  const editSearchTerm = (e) => {
+    setSearchTerm(e.target.value)
+  }
+
+  const fetchCountries = async () => {
     const response = await fetch(url);
     const data = await response.json();
-    const allCountries = data.map((item) => {
-      const {name, population, region, capital, flags} = item;
-      return {
+    const allCountries = data.map((country) => {
+      const {name, region, population, capital,   flags, subregion, borders, languages,  topLevelDomain, currencies, nativeName} = country;
+      return{
         id: population,
         name,
-        population,
         region,
         capital,
-        flags,
-      };
+        img: flags,
+        population,
+        borders,
+        languages,
+        currencies,
+        subregion,
+        nativeName,
+        topLevelDomain,
+      }
     });
-    setCountry(allCountries);
+    setCountries(allCountries);
   }
 
   const searchCountry = async() => {
     const response = await fetch(`${url2}${searchTerm}`);
     const data = await response.json();
-    const countriesSearch = data.map((item) => {
-      const {name, population, region, capital, flags} = item;
+    const allCountries = data.map((country) => {
+      const {name, region, population, capital, flags, subregion, borders, languages,  topLevelDomain, currencies, nativeName} = country;
       return{
         id: population,
         name,
-        population,
         region,
         capital,
-        flags
-      };
+        img: flags,
+        population,
+        borders,
+        languages,
+        currencies,
+        subregion,
+        nativeName,
+        topLevelDomain,
+      }
     });
-    setCountry(countriesSearch);
-  }
-
-  const filterRegion = (region) => {
-    const newRegion = country.filter((item) => item.region === region);
-    setCountry(newRegion);
+    setCountries(allCountries);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    searchCountry();
-    setSearchTerm("");
-  };
+    searchCountry()
+    setSearchTerm("")
+  }
+
+  const filterRegion = (region) => {
+    const country = countries.filter((item) => item.region === region);
+    setCountries(country);
+  }
 
   useEffect(() => {
-    fetchAll()
+    fetchCountries()
   }, [])
   
 
   return (
     <AppContext.Provider value={{
-      country,
       theme,
       toggleTheme,
       searchTerm,
-      setSearchTerm,
+      editSearchTerm,
+      countries,
       handleSubmit,
+      filterRegion,
       dropdown,
       toggleDropdown,
-      filterRegion
     }}>
       {children}
     </AppContext.Provider>
@@ -91,4 +107,4 @@ export const useGlobalContext = () => {
   return useContext(AppContext);
 }
 
-export {AppContext, AppProvider}
+export default AppProvider;

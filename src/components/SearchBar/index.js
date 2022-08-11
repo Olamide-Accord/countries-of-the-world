@@ -1,30 +1,25 @@
 import React from 'react';
-import { IoIosSearch, IoIosArrowDown } from "react-icons/io/index";
-
+import {HiSearch} from "react-icons/hi/index"
 import { useGlobalContext } from '../../context';
-import "./search-form.css"
+import {IoIosArrowDown} from "react-icons/io/index"
+import "./search-bar.css"
 
-const SearchForm = () => {
-  const {handleSubmit, searchTerm, setSearchTerm, dropdown, toggleDropdown, filterRegion, country} = useGlobalContext();
-
-
+const SearchBar = () => {
+  const {searchTerm, editSearchTerm, handleSubmit, dropdown, toggleDropdown, filterRegion} = useGlobalContext()
   return (
-    <div className="search-form">
+    <div className="search-bar">
       <form onSubmit={handleSubmit}>
-        <div className="inputDiv" id='searchInput'>
-          <div className="flex-input">
-            <IoIosSearch className="icon" />
-            <input
-              type="text"
-              placeholder="Search for a country..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+        <div className="input-div">
+          <HiSearch className='input-icon icon'/>
+          <input 
+            type="text"
+            placeholder='Search for a country...'
+            value={searchTerm}
+            onChange={editSearchTerm}
             />
-          </div>
         </div>
       </form>
-      <div>
-        <div className="inputDiv" id='dropdown-container'>
+      <div className='input-div' id='dropdown-container'>
           <div className="dropdown-div">
             <div className="flex-dropdown">
               <div>Filter by Region</div>
@@ -39,9 +34,8 @@ const SearchForm = () => {
             <button onClick={() => filterRegion("Oceania")}>Oceania</button>
           </div>
         </div>
-      </div>
     </div>
-  );
+  )
 }
 
-export default SearchForm
+export default SearchBar

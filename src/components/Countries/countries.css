@@ -1,36 +1,47 @@
-.countries {
-  z-index: 1;
-  margin-top: 2%;
-}
-.countries .box-container{
+.countries{
+  margin: 4rem 0 2.5rem;
   display: flex;
+  align-items: center;
+  row-gap: 3rem;
+  column-gap: 2rem;
   flex-wrap: wrap;
-  gap: 5rem;
-  padding: 3% 0;
 }
-.countries .box-container .box{
+.countries .country{
   flex: 1 1 25rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1.2rem 2rem rgba(0,0,0,0.3);
+  border-radius: 0.7rem;
+  box-shadow: 0 0.2rem 0.2rem rgba(0,0,0,0.2);
 }
-.countries .box-container .box img{
-  height: 15rem;
+.countries .country .image img{
   width: 100%;
+  height: 18rem;
   object-fit: cover;
 }
-.countries .box-container .box-text{
-  padding: 1.5rem 3rem 2.5rem;
+.countries .country .country-text{
+  padding: 1.5rem;
 }
-.box-text h4{
+.country-text h4{
   font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
-.box-text h5{
-  font-size: 1.6rem;
-  margin-bottom: 0.65rem;
+.country-text h5{
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
   letter-spacing: 0.1rem;
 }
-.box-text .box p b{
-  font-weight: 400;
+.country-text h5 span{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.countries .country .button{
+  margin: 1.8rem 0 1.2rem;
+}
+#light .countries .country{
+  background: var(--white);
+  color: var(--lightModeText);
+}
+#dark .countries .country{
+  background: var(--darkModeElement);
+  color: var(--darkModeText);
 }

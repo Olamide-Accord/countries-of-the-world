@@ -1,16 +1,14 @@
 import React from 'react'
-import Countries from '../../components/Countries';
-import SearchForm from '../../components/SearchForm';
-import { useGlobalContext } from '../../context';
+import Countries from '../../components/Countries'
+import SearchBar from '../../components/SearchBar'
 
 const Home = () => {
-  const {searchTerm} = useGlobalContext()
   return (
-    <section className="home">
-      <SearchForm/>
+    <section>
+      <SearchBar/>
       <Countries/>
     </section>
   )
 }
 
-export default Home;
+export default Home

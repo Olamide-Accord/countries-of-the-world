@@ -1,29 +1,60 @@
-.search-form{
+.search-bar{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-.search-form .inputDiv{
-  width: 30rem;
-  padding: 1.3rem 2.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
+
+.search-bar .input-div{
+  width: 35rem;
   position: relative;
+  border-radius: 0.5rem;
 }
-.search-form .inputDiv#dropdown-container{
+.search-bar .input-div input{
+  width: 100%;
+  padding: 1.2rem 5rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  border-radius: 0.3rem;
+}
+.search-bar .input-div .input-icon{
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.search-bar .dropdown {
   width: 20rem;
 }
-#light .inputDiv{
+#light .search-bar .input-div input{
+  background: var(--lightModeBg);
+}
+#dark .search-bar .input-div input{
+  background: var(--darkModeElement);
+  
+}
+#dark .search-bar .input-div input::placeholder{
+  color: var(--white);
+}
+
+/* dropdown */
+.search-bar #dropdown-container{
+  width: 20rem;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  
+}
+#light .input-div{
   background: var(--white);
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
-#dark .inputDiv{
+#dark .input-div{
   background: var(--darkModeElement);
 }
-#dark .inputDiv input::placeholder {
+#dark .input-div input::placeholder {
   color: var(--white);
 }
-.search-form .inputDiv input{
+.search-form .input-div input{
   width: 100%;
   font-size: 1.5rem;
 }
