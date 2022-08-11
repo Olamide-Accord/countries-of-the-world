@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGlobalContext } from '../../context';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "./single-country.css";
 
 const SingleCountry = () => {
@@ -9,10 +9,12 @@ const SingleCountry = () => {
   const country = countries.filter((item) => {
     return item.id === parseInt(id);
   });
-  console.log(country);
   
   return (
     <section className="single-country">
+      <div>
+        <Link to="/" className="btn">back home</Link>
+      </div>
       {
         country.map((item, index) => {
           const {name, region, population, capital,   img, subregion, borders, languages,  topLevelDomain, currencies, nativeName} = item;
@@ -62,13 +64,14 @@ const SingleCountry = () => {
                   </h5>
                 </div>
               </div>
-              {/* <div className="borders">
-              <h6>Border Countries: </h6>
+              <div className="borders">
+              <h6>Border Countries: <br /></h6>
               {
-                borders.map((item, index) => <button className="btn">{item[index]}</button>
+                borders ? borders.map((item, index) => <button className="btn">{item}</button>
                 )
+                : <span className='border-text'>no border countries</span>
               }
-            </div> */}
+            </div>
             </div>
             
           </div>

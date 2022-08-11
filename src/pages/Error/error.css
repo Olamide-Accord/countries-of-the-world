@@ -1,0 +1,13 @@
+.error-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-div h4{
+  font-size: 2.5rem;
+}
+.error-div .btn{
+  margin: 1rem 0;
+  
+}

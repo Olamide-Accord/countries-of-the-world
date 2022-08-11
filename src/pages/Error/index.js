@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
+import "./error.css"
 
 const Error = () => {
   return (
     <section className="error">
       <div className='error-div'>
         <h4>No matching pages</h4>
-        <button className="btn">
+        <Link to="/" className="btn">
           back to home
-        </button>
+        </Link>
       </div>
     </section>
   )

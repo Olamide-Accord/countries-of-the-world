@@ -12,6 +12,8 @@ const AppProvider = ({children}) => {
   const [countries, setCountries] = useState([]);
   const [dropdown, setDropdown] = useState(false);
 
+  const [filterCountry, setFilterCountry] = useState(countries);
+
   const toggleDropdown = () => {
     setDropdown(!dropdown)
   }
@@ -78,12 +80,12 @@ const AppProvider = ({children}) => {
 
   const filterRegion = (region) => {
     const country = countries.filter((item) => item.region === region);
-    setCountries(country);
+    setFilterCountry(country);
   }
 
   useEffect(() => {
     fetchCountries()
-  }, [])
+  }, [countries])
   
 
   return (
@@ -95,6 +97,7 @@ const AppProvider = ({children}) => {
       countries,
       handleSubmit,
       filterRegion,
+      filterCountry,
       dropdown,
       toggleDropdown,
     }}>

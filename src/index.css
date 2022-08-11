@@ -50,14 +50,14 @@ section {
   cursor: pointer;
   letter-spacing: 0.25rem;
   border-radius: 0.3rem;
-  box-shadow: 0 0.2rem 0 0 rgba(0,0,0,0.2);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 }
 #light .btn{
-  background: var(--lightModeInput);
+  background: var(--white);
   color: var(--lightModeText);
 }
 #dark .btn{
-  background: var(--darkModeBg);
+  background: var(--darkModeElement);
   color: var(--white);
 }
 @media (max-width: 500px) {

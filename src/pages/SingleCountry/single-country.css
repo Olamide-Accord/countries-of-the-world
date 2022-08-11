@@ -1,5 +1,6 @@
 .single-country .countries {
-  gap: 5rem;
+  column-gap: 5rem;
+  row-gap: 3rem;
 }
 .single-country .image{
   flex: 1 1 20rem;
@@ -34,8 +35,26 @@
   margin-right: 0.4rem;
 }
 .single-country .countries .country-text .borders .btn{
-  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
 }
 .single-country .countries .country-text h6{
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.border-text{
+  margin-left: 0.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+@media (max-width: 600px) {
+  .single-country .countries {
+    flex-wrap: wrap;
+  }
+  .single-country .countries .country-text .flex-text{
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
